@@ -1,0 +1,78 @@
+#!/usr/bin/env python
+
+# file: /data/courses/ece_1111/current/labs/lab_03/p01/ortiz_damien
+
+#--------------------------------------------------------------------------
+
+#Python program will print the contents of a file onto the terminal similar
+# to the cat command
+
+#--------------------------------------------------------------------------
+
+#Imports
+
+#--------------------------------------------------------------------------
+
+#Allows us to get system infomation such as command line arguments
+#
+import sys
+
+#Allows us to revieve OS information 
+#
+import os
+
+#--------------------------------------------------------------------------
+
+#Function Code
+
+#--------------------------------------------------------------------------
+
+#main function
+#
+def main(argv):
+
+        #Takes the filenames we input into the command line and stores it
+        # in a usable variable
+        #
+        file_input = argv[1:]
+
+        #loop repeats process for each file entered
+        #
+        for i in range(len(file_input)): 
+                #Try and except checks whether the file exists before trying to
+                # operate on it
+                #
+                try:
+                        
+                        #With opens and closes the file even if an error occurs
+                        #
+                        with open(file_input[i], "r") as FILE:
+                                #Uses line count of file to loop through
+                                # every line and print it without any newline
+                                # characters
+                                #
+                                for line in FILE:
+                                        print(line.strip())
+                        #Creates visual seperator between files
+                        #
+                        print("----------------")
+                        print()
+                #Error case for when the file does not exist
+                #
+                except FileNotFoundError:
+
+                        #Tells the user the file they chose does not exist
+                        #
+                        print("The file '%s' does not exist" % file_input[i])
+                        
+        # exit gracefully
+        
+        return True
+
+# begin gracefully
+
+if __name__ == '__main__':
+    main(sys.argv[0:])
+
+        
+#End of file

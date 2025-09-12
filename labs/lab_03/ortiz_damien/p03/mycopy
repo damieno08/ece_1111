@@ -1,0 +1,85 @@
+#!/usr/bin/env python
+
+# file: /data/courses/ece_1111/current/labs/lab_03/p03/ortiz_damien
+
+#--------------------------------------------------------------------------
+
+#Python program will read an input file and copy it to an output file
+
+#--------------------------------------------------------------------------
+
+#Imports
+
+#--------------------------------------------------------------------------
+
+#Allows us to get system infomation such as command line arguments
+#
+import sys
+
+#Allows us to revieve OS information 
+#
+import os
+
+#--------------------------------------------------------------------------
+
+#Function Code
+
+#--------------------------------------------------------------------------
+
+#main function
+#
+def main(argv):
+
+        
+        #Takes the filenames we input into the command line and store them
+        # in a variable
+        #
+        file_original = argv[1]
+
+        #Try and except checks whether the file exists before trying to
+        # operate on it
+        #
+        try:
+                #With opens and closes the file even if an error occurs
+                #
+                with open(file_original, "r") as FILE:
+
+                        #Creates a list of the output files
+                        #
+                        file_output = argv[2:]
+                        
+                        #Uses line count of file to loop through
+                        # every line and write it to the output files
+                        #
+                        for line in FILE:
+                                for i in range(len(file_output)):
+
+                                        #Opens all the files we want to
+                                        # write to
+                                        #
+                                        with open(file_output[i], "a") as OUTPUT:
+                                                #Writes the line into our
+                                                # output files
+                                                #
+                                                OUTPUT.write(line)
+
+
+                                
+        #Error case for when the file does not exist
+        #
+        except FileNotFoundError:
+
+                #Tells the user the file they chose does not exist
+                #
+                print("The file '%s' does not exist" % file_original)
+        # exit gracefully
+        
+        return True
+
+# begin gracefully
+
+if __name__ == '__main__':
+    main(sys.argv[0:])
+
+        
+#End of file

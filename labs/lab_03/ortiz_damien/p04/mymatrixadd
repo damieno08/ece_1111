@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # file: /data/courses/ece_1111/current/labs/lab_03/p04/ortiz_damien
-#Verion: 6.0
+#Verion: 
 
 #--------------------------------------------------------------------------
 
@@ -68,9 +68,7 @@ def matrixToElements(numList1, numList2):
                                 #
                                 rowList1 = matrixList1[j]
                                 rowList2 = matrixList2[j]
-                                #Creates blank elements to be added to rows
-                                #
-                                element = []
+
                                 #Checks to see if the file contains only numbers
                                 #
                                 if (type(rowList1) == str):
@@ -118,12 +116,11 @@ def matrixToElements(numList1, numList2):
 
                                 #Adds (x+y) onto list of elements for this row
                                 #
-                                addElement = int(x)+int(y)                               
-                                element.append(addElement)
+                                addElement = int(x)+int(y)                
 
                                 #Adds the list of elements to the row list
                                 #
-                                rows.append(element)
+                                rows.append(addElement)
                         #Adds the list of rows to the output matrix
                         #
                         output.append(rows)
@@ -252,5 +249,6 @@ def main(argv):
 #
 if __name__ == '__main__':
     main(sys.argv[0:])
+
         
 #End of file

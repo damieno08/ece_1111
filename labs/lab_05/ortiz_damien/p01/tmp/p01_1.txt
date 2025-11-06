@@ -1,0 +1,1 @@
+program name: p01.exe sum = 67.000000

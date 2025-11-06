@@ -1,0 +1,37 @@
+name:
+    p01.exe
+
+synopsis:
+    p01.exe [options] matrix_file(s)
+
+descr:
+    Performs basic linear algebra operations on matrices.
+    Supported operations include addition, subtraction, multiplication,
+    and determinant. Input matrices are read from text files.
+
+options:
+    -o, --operation   specifies the operation to perform
+    -u, --usage       displays a one-line usage message
+    -h, --help        displays this detailed help message
+
+arguments:
+    matrix_file(s): one or more text files containing matrix data.
+                    For operations requiring two matrices, provide both
+                    filenames (e.g., m1.txt m2.txt).
+                    For determinant, provide a single matrix file.
+
+examples:
+    p01.exe --operation addition m1.txt m2.txt
+    p01.exe -o subtraction m1.txt m2.txt
+    p01.exe -o multiplication m1.txt m2.txt
+    p01.exe -o determinant m1.txt
+    p01.exe --usage
+    p01.exe --help
+
+notes:
+    - Matrices must be formatted in plain text.
+    - Ensure that matrix dimensions are compatible for the chosen operation.
+    - Example: for addition and subtraction, both matrices must have the same
+      number of rows and columns. For multiplication, the number of columns
+      in the first matrix must match the number of rows in the second.
+

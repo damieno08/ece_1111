@@ -1,0 +1,14 @@
+# an example file
+#
+this is text
+27
+another line of text
+-27
+yet another line of text
+27.272727
+yet another line of text
+-27.272727
+yet another line of text
+3.3e-01
+yet another line of text
+-3.3e-01

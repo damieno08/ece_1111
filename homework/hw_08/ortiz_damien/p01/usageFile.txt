@@ -1,0 +1,1 @@
+Usage: p01.exe [options] matrix_file(s)
